@@ -23,6 +23,8 @@ public static class MiddlewareConfig
       app.UseHsts();
     }
 
+    app.UseMiddleware<AuditLoggingMiddleware>();
+
     app.UseFastEndpoints();
 
     if (app.Environment.IsDevelopment())

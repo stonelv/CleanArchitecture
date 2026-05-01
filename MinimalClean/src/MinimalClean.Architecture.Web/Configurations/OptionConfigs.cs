@@ -12,6 +12,7 @@ public static class OptionConfigs
   {
     services.Configure<MailserverConfiguration>(configuration.GetSection("Mailserver"))
     .Configure<DatabaseOptions>(configuration.GetSection("DatabaseOptions"))
+    .Configure<AuditLogCleanupOptions>(configuration.GetSection(AuditLogCleanupOptions.ConfigurationSectionName))
     // Configure Web Behavior
     .Configure<CookiePolicyOptions>(options =>
     {

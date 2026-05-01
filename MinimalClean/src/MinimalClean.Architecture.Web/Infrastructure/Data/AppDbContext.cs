@@ -1,5 +1,6 @@
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
+using MinimalClean.Architecture.Web.Domain.AuditLogAggregate;
 using MinimalClean.Architecture.Web.Domain.CartAggregate;
 using MinimalClean.Architecture.Web.Domain.GuestUserAggregate;
 using MinimalClean.Architecture.Web.Domain.OrderAggregate;
@@ -15,6 +16,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) :
   public DbSet<GuestUser> GuestUsers => Set<GuestUser>();
   public DbSet<Order> Orders => Set<Order>();
   public DbSet<OrderItem> OrderItems => Set<OrderItem>();
+  public DbSet<AuditLog> AuditLogs => Set<AuditLog>();
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
