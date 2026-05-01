@@ -1,3 +1,4 @@
+using MinimalClean.Architecture.Web.Domain.AuditLogAggregate;
 using MinimalClean.Architecture.Web.Domain.CartAggregate;
 using MinimalClean.Architecture.Web.Domain.GuestUserAggregate;
 using MinimalClean.Architecture.Web.Domain.OrderAggregate;
@@ -14,4 +15,5 @@ namespace MinimalClean.Architecture.Web.Infrastructure.Data.Config;
 [EfCoreConverter<OrderItemId>]
 [EfCoreConverter<Quantity>]
 [EfCoreConverter<Price>]
+[EfCoreConverter<AuditLogId>]
 internal partial class VogenEfCoreConverters;
