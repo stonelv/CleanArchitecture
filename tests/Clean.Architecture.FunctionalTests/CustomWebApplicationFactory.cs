@@ -1,4 +1,4 @@
-﻿using Clean.Architecture.Infrastructure.Data;
+using Clean.Architecture.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Testcontainers.MsSql;
@@ -13,8 +13,7 @@ public class CustomWebApplicationFactory<TProgram> : WebApplicationFactory<TProg
   {
     try
     {
-      _dbContainer = new MsSqlBuilder()
-        .WithImage("mcr.microsoft.com/mssql/server:2022-latest")
+      _dbContainer = new MsSqlBuilder("mcr.microsoft.com/mssql/server:2022-latest")
         .WithPassword("Your_password123!")
         .Build();
       await _dbContainer.StartAsync();
