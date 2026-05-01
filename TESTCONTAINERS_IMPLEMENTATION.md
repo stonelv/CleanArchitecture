@@ -24,14 +24,13 @@ Successfully migrated functional tests from in-memory database to **Testcontaine
 
 Key changes:
 - Implements `IAsyncLifetime` for proper async initialization/cleanup
-- Creates a SQL Server container using `MsSqlBuilder`
+- Creates a SQL Server container using `MsSqlBuilder` with image parameter
 - Uses SQL Server 2022 image: `mcr.microsoft.com/mssql/server:2022-latest`
 - Applies EF Core migrations instead of `EnsureCreated()`
 - Each test run gets a fresh containerized SQL Server instance
 
 ```csharp
-private readonly MsSqlContainer _dbContainer = new MsSqlBuilder()
-  .WithImage("mcr.microsoft.com/mssql/server:2022-latest")
+private readonly MsSqlContainer _dbContainer = new MsSqlBuilder("mcr.microsoft.com/mssql/server:2022-latest")
   .WithPassword("Your_password123!")
   .Build();
 ```
