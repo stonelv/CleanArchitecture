@@ -17,4 +17,9 @@
     <Project Path="src/MinimalClean.Architecture.AspireHost/MinimalClean.Architecture.AspireHost.csproj" />
     <Project Path="src/MinimalClean.Architecture.ServiceDefaults/MinimalClean.Architecture.ServiceDefaults.csproj" />
   </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/MinimalClean.Architecture.UnitTests/MinimalClean.Architecture.UnitTests.csproj" />
+    <Project Path="tests/MinimalClean.Architecture.IntegrationTests/MinimalClean.Architecture.IntegrationTests.csproj" />
+    <Project Path="tests/MinimalClean.Architecture.FunctionalTests/MinimalClean.Architecture.FunctionalTests.csproj" />
+  </Folder>
 </Solution>

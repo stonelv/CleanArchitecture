@@ -1,0 +1,13 @@
+global using Ardalis.HttpClientTestExtensions;
+global using Ardalis.Result;
+global using Ardalis.SharedKernel;
+global using Mediator;
+global using Microsoft.AspNetCore.Hosting;
+global using Microsoft.AspNetCore.Mvc.Testing;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Hosting;
+global using Microsoft.Extensions.Logging;
+global using NSubstitute;
+global using Shouldly;
+global using System.Net.Http.Json;
+global using Xunit;
