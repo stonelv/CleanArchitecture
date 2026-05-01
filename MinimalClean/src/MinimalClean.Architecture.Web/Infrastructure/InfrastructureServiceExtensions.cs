@@ -2,6 +2,7 @@ using Ardalis.GuardClauses;
 using MinimalClean.Architecture.Web.Infrastructure.Data;
 using MinimalClean.Architecture.Web.Infrastructure.Data.Queries;
 using MinimalClean.Architecture.Web.ProductFeatures.List;
+using MinimalClean.Architecture.Web.ProductFeatures.Search;
 using Microsoft.EntityFrameworkCore;
 
 namespace MinimalClean.Architecture.Web.Infrastructure;
@@ -29,7 +30,8 @@ public static class InfrastructureServiceExtensions
 
     services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>))
            .AddScoped(typeof(IReadRepository<>), typeof(EfRepository<>))
-           .AddScoped<IListProductsQueryService, ListProductsQueryService>();
+           .AddScoped<IListProductsQueryService, ListProductsQueryService>()
+           .AddScoped<ISearchProductsQueryService, SearchProductsQueryService>();
 
     logger.LogInformation("{Project} services registered", "Infrastructure");
 
