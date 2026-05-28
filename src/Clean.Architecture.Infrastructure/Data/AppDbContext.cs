@@ -1,9 +1,11 @@
-﻿using Clean.Architecture.Core.ContributorAggregate;
+using Clean.Architecture.Core.ContributorAggregate;
+using Clean.Architecture.Core.NoteAggregate;
 
 namespace Clean.Architecture.Infrastructure.Data;
 public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
 {
   public DbSet<Contributor> Contributors => Set<Contributor>();
+  public DbSet<Note> Notes => Set<Note>();
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
